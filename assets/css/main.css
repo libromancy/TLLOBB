@@ -19,8 +19,8 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
+  --background-color: #000000; /* Background color for the entire website, including individual sections */
+  --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #101f0c; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #e11514; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -45,8 +45,8 @@
 }
 
 .dark-background {
-  --background-color: #060606;
-  --default-color: #ffffff;
+  --background-color: #000000;
+  --default-color: #000000;
   --heading-color: #ffffff;
   --surface-color: #252525;
   --contrast-color: #ffffff;
@@ -64,11 +64,11 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
-  background: url('/../img/fondo.png');
-  /*background-repeat: repeat;
-  background-position: center top;
- /* background-size: cover;*/
-
+ 
+  /* background-image: url('../../fondo.png'); */
+  /* background-size: contain; Esto asegura que la imagen cubra toda el área */
+  /* background-position: top left; Centra la imagen en la pantalla */
+  /* background-repeat: no-repeat; Evita que la imagen se repita */
 }
 
 a {
@@ -96,7 +96,7 @@ h6 {
 ------------------------------*/
 .php-email-form .error-message {
   display: none;
-  background: #df1529;
+  background-color: #df1529;
   color: #ffffff;
   text-align: left;
   padding: 15px;
@@ -107,7 +107,7 @@ h6 {
 .php-email-form .sent-message {
   display: none;
   color: #ffffff;
-  background: #059652;
+  background-color: #059652;
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -116,7 +116,7 @@ h6 {
 
 .php-email-form .loading {
   display: none;
-  background: var(--surface-color);
+  background-color: var(--surface-color);
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -235,7 +235,7 @@ h6 {
   .navmenu .dropdown ul {
     margin: 0;
     padding: 10px 0;
-    background: var(--nav-dropdown-background-color);
+    background-color: var(--nav-dropdown-background-color);
     display: block;
     position: absolute;
     visibility: hidden;
@@ -407,7 +407,7 @@ h6 {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    background: rgba(33, 37, 41, 0.8);
+    background-color: rgba(33, 37, 41, 0.8);
     transition: 0.3s;
   }
 
@@ -589,7 +589,6 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
   scroll-margin-top: 90px;
   overflow: clip;
 }
@@ -617,7 +616,7 @@ section,
   font-weight: 700;
   padding: 8px 20px;
   margin: 0;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   color: var(--accent-color);
   display: inline-block;
   text-transform: uppercase;
@@ -669,7 +668,7 @@ section,
 
 .hero .btn-get-started {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   font-family: var(--heading-font);
   font-weight: 500;
   font-size: 14px;
@@ -682,7 +681,7 @@ section,
 }
 
 .hero .btn-get-started:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
 }
 
@@ -726,7 +725,7 @@ section,
 }
 
 .hero .icon-box {
-  background: var(--surface-color);
+  background-color: var(--surface-color);
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
@@ -775,7 +774,7 @@ section,
 .about .content .who-we-are {
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: color-mix(in srgb, var(--default-color), transparent 100%);
 }
 
 .about .content h3 {
@@ -803,7 +802,7 @@ section,
 }
 
 .about .content .read-more {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   color: var(--contrast-color);
   font-family: var(--heading-font);
   font-weight: 500;
@@ -825,7 +824,7 @@ section,
 }
 
 .about .content .read-more:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
   padding-right: 19px;
 }
 
@@ -852,7 +851,7 @@ section,
 
 .services .service-item .icon {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   margin: 0;
   width: 64px;
   height: 64px;
@@ -907,7 +906,7 @@ section,
 }
 
 .features .feature-box i {
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
   color: var(--accent-color);
   line-height: 0;
   padding: 4px;
@@ -918,204 +917,11 @@ section,
 }
 
 .features .feature-box:hover i {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   color: var(--contrast-color);
 }
 
-/*--------------------------------------------------------------
-# Pricing Section
---------------------------------------------------------------*/
-.pricing .pricing-tem {
-  background-color: var(--surface-color);
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-  padding: 40px 20px;
-  text-align: center;
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-  transition: 0.3s;
-  height: 100%;
-}
 
-@media (min-width: 1200px) {
-  .pricing .pricing-tem:hover {
-    transform: scale(1.1);
-  }
-}
-
-.pricing h3 {
-  font-weight: 700;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.pricing .price {
-  font-size: 36px;
-  color: var(--heading-color);
-  font-weight: 600;
-  font-family: var(--heading-font);
-}
-
-.pricing .price sup {
-  font-size: 20px;
-  top: -15px;
-  left: -3px;
-}
-
-.pricing .price span {
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.pricing .icon {
-  padding: 20px 0;
-}
-
-.pricing .icon i {
-  font-size: 48px;
-}
-
-.pricing ul {
-  padding: 0;
-  list-style: none;
-  color: var(--default-color);
-  text-align: center;
-  line-height: 26px;
-  font-size: 16px;
-  margin-bottom: 25px;
-}
-
-.pricing ul li {
-  padding-bottom: 10px;
-}
-
-.pricing ul .na {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-  text-decoration: line-through;
-}
-
-.pricing .btn-buy {
-  display: inline-block;
-  padding: 8px 40px 10px 40px;
-  border-radius: 50px;
-  color: var(--accent-color);
-  transition: none;
-  font-size: 16px;
-  font-weight: 400;
-  font-family: var(--heading-font);
-  font-weight: 600;
-  transition: 0.3s;
-  border: 1px solid var(--accent-color);
-}
-
-.pricing .btn-buy:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.pricing .featured {
-  width: 200px;
-  position: absolute;
-  top: 18px;
-  right: -68px;
-  transform: rotate(45deg);
-  z-index: 1;
-  font-size: 14px;
-  padding: 1px 0 3px 0;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-/*--------------------------------------------------------------
-# Faq Section
---------------------------------------------------------------*/
-.faq .content h3 {
-  font-weight: 400;
-  font-size: 34px;
-}
-
-.faq .content p {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
-.faq .faq-container .faq-item {
-  background-color: var(--surface-color);
-  position: relative;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.faq .faq-container .faq-item:last-child {
-  margin-bottom: 0;
-}
-
-.faq .faq-container .faq-item h3 {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-  margin: 0 30px 0 0;
-  transition: 0.3s;
-  cursor: pointer;
-  display: flex;
-  align-items: flex-start;
-}
-
-.faq .faq-container .faq-item h3 .num {
-  color: var(--accent-color);
-  padding-right: 5px;
-}
-
-.faq .faq-container .faq-item h3:hover {
-  color: var(--accent-color);
-}
-
-.faq .faq-container .faq-item .faq-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: 0.3s ease-in-out;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.faq .faq-container .faq-item .faq-content p {
-  margin-bottom: 0;
-  overflow: hidden;
-}
-
-.faq .faq-container .faq-item .faq-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 16px;
-  line-height: 0;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.faq .faq-container .faq-item .faq-toggle:hover {
-  color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active h3 {
-  color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active .faq-content {
-  grid-template-rows: 1fr;
-  visibility: visible;
-  opacity: 1;
-  padding-top: 10px;
-}
-
-.faq .faq-container .faq-active .faq-toggle {
-  transform: rotate(90deg);
-  color: var(--accent-color);
-}
 
 /*--------------------------------------------------------------
 # Contact Section
@@ -1126,7 +932,7 @@ section,
 
 .contact .info-item i {
   color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
   font-size: 20px;
   width: 44px;
   height: 44px;
@@ -1152,7 +958,7 @@ section,
 }
 
 .contact .info-item:hover i {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   color: var(--contrast-color);
 }
 
@@ -1186,7 +992,7 @@ section,
 
 .contact .php-email-form button[type=submit] {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   border: 0;
   padding: 10px 30px;
   transition: 0.4s;
@@ -1194,7 +1000,7 @@ section,
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
 /*--------------------------------------------------------------
@@ -1339,13 +1145,14 @@ section,
 }
 .video-wrapper {
   position: relative;
-  width: 50%; /* redujimos el tamaño general */
+  width: 80%; /* redujimos el tamaño general */
   aspect-ratio: 16 / 9;
   margin: 0 auto; /* centrado horizontal */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  top:-100px
 }
 
 .fondo-video {
