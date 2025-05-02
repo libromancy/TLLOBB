@@ -19,9 +19,9 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #000000; /* Background color for the entire website, including individual sections */
-  --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #101f0c; /* Color for headings, subheadings and title throughout the website */
+  --background-color:#030303 ; /* Background color for the entire website, including individual sections */
+  --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #030303; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #e11514; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -29,11 +29,11 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #212529;  /* The default color of the main navmenu links */
+  --nav-color: #ffffff;  /* The default color of the main navmenu links */
   --nav-hover-color: #e11514; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #e11514; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
@@ -45,8 +45,8 @@
 }
 
 .dark-background {
-  --background-color: #000000;
-  --default-color: #000000;
+  --background-color: #030303;
+  --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #252525;
   --contrast-color: #ffffff;
@@ -423,16 +423,12 @@ h6 {
   color: var(--default-color);
   background-color: var(--background-color);
   font-size: 14px;
-  padding: 40px 0;
+  padding: 10px 0;
   position: relative;
 }
 
-.footer .copyright p {
-  margin-bottom: 0;
-}
-
 .footer .social-links {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .footer .social-links a {
@@ -442,9 +438,9 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 1px solid color-mix(in srgb, var(--contrast-color), transparent 50%);
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: color-mix(in srgb, var(--contrast-color), transparent 50%);
   margin: 0 5px;
   transition: 0.3s;
 }
@@ -455,6 +451,7 @@ h6 {
 }
 
 .footer .credits {
+  color: #f1f6f1;
   margin-top: 10px;
   font-size: 13px;
   text-align: center;
@@ -581,7 +578,6 @@ h6 {
   padding-right: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
-
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
@@ -591,13 +587,39 @@ section,
   background-color: var(--background-color);
   scroll-margin-top: 90px;
   overflow: clip;
+
+  /* Centrado horizontal */
+  display: flex;
+  flex-direction: column; /* Mantiene la disposición en columna */
+  justify-content: flex-start; /* Alinea los elementos hacia arriba */
+  align-items: center; /* Centra los elementos horizontalmente */
+  width: 100%;
+  padding: 2rem 0; /* Espaciado alrededor de la sección */
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
+  }
+}
+
+/* Para asegurar que los componentes se mantengan centrados y con un ancho controlado */
+section .componente {
+  width: 100%;
+  max-width: 1200px; /* Ajusta según lo que desees */
+  margin: 0 auto; /* Centrado automático */
+  display: flex;
+  flex-direction: column; /* Para que los componentes estén apilados */
+  gap: 2rem; /* Espacio entre los componentes */
+  padding: 2rem; /* Espaciado dentro del componente */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  section .componente {
+    max-width: 100%; /* Se ajusta al 100% del contenedor */
+    padding: 1rem;  /* Menos espacio en pantallas pequeñas */
   }
 }
 
@@ -1172,4 +1194,128 @@ section,
   aspect-ratio: 16 / 9;
   height: auto;
   border: none;
+}
+/* --- Estilos base del componente --- */
+.componente {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 80%;
+  margin: auto;
+}
+
+.componente .imagen-grande {
+  flex: 1 1 40%;
+  max-width: 50%;
+}
+
+.componente .imagen-grande img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.componente .contenido {
+  flex: 1 1 60%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.componente .imagen-pequena {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+.componente .imagen-pequena img {
+  width: 100%;
+  height: 100px;
+  display: block;
+  border-radius: 6px;
+}
+
+.componente .titulo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(173, 0, 0);
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.3rem 0.6rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.componente .texto {
+  color: rgb(255, 255, 255);
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+/* --- Variante: imagen a la izquierda --- */
+.componente.izquierda {
+  flex-direction: row;
+}
+
+.componente.izquierda .contenido {
+  align-items: flex-start;
+  text-align: left;
+}
+
+
+/* --- Variante: imagen a la derecha --- */
+.componente.derecha {
+  flex-direction: row-reverse;
+}
+
+.componente.derecha .contenido {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Contenedor global */
+.logo-component {
+  display: flex;
+  justify-content: center;  /* Centra el contenido horizontalmente */
+  align-items: center;      /* Centra el contenido verticalmente */
+  height: 50%;            /* Toma toda la altura de la ventana */
+}
+
+/* Contenedor del logo y texto */
+.logo-container {
+  text-align: center;       /* Centra el texto dentro de este contenedor */
+  padding: 1rem;
+}
+
+/* Estilo del logo */
+.logo {
+  max-width: 100%;  /* Asegura que el logo se ajuste correctamente */
+  height: auto;     /* Mantiene la proporción del logo */
+  margin-bottom: 1rem; /* Espacio entre el logo y el texto */
+}
+
+/* Estilo del texto */
+.texto {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Imagen que se superpone desde abajo */
+.offset-imagen {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin-top: -50px; /* Aquí controlas la cantidad de superposición, ajusta como desees */
+  z-index: 1; /* Coloca la imagen encima del contenido pero sin taparlo completamente */
 }
