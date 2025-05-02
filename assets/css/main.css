@@ -1319,3 +1319,63 @@ section .componente {
   margin-top: -50px; /* Aquí controlas la cantidad de superposición, ajusta como desees */
   z-index: 1; /* Coloca la imagen encima del contenido pero sin taparlo completamente */
 }
+
+.portada-superpuesta {
+  position: relative;
+  overflow: hidden;
+}
+
+.fondo-portada {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+
+/* Componente suelto sin fondo y apilado */
+.componente-suelto {
+  position: absolute;
+  top: 50%; /* Cambiá este valor según el posicionamiento vertical deseado */
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+  padding: 0; /* sin padding interno */
+  background: transparent; /* explícitamente transparente */
+}
+
+.imagen-suelta img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.boton-container {
+  width: 100%;
+  text-align: center;
+}
+
+.boton-link {
+  color:var(--heading-color);
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--surface-color);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.boton-link:hover {
+  color:var(--default-color);
+  background-color: var(--accent-color);
+}
+
