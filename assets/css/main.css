@@ -1334,37 +1334,40 @@ section .componente {
   z-index: 0;
 }
 
-/* Componente suelto sin fondo y apilado */
-.componente-suelto {
-  position: absolute;
-  top: 50%; /* Cambiá este valor según el posicionamiento vertical deseado */
-  transform: translate(-50%, -50%);
-  z-index: 1;
+/* Componente suelto sobre la imagen de fondo */
+.componente-con-banda .componente-suelto {
+  top: 50%; /* Centrado vertical */
+  left: 50%; /* Centrado horizontal */
+  transform: translate(-50%, -150%); /* Ajuste para el centro exacto */
+  z-index: 1; /* Asegura que el componente esté sobre la imagen de fondo */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   width: 100%;
-  max-width: 600px;
-  padding: 0; /* sin padding interno */
-  background: transparent; /* explícitamente transparente */
+  max-width: 600px; /* Limita el tamaño del componente */
+  padding: 0; /* Sin padding interno */
+  background: transparent; /* Sin fondo */
 }
 
-.imagen-suelta img {
+/* Estilo de la imagen del logo */
+.componente-con-banda .imagen-suelta img {
   width: 100%;
-  max-width: 350px;
+  max-width: 350px; /* Ajuste el tamaño de la imagen */
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 8px; /* Redondea las esquinas de la imagen */
 }
 
-.boton-container {
+/* Contenedor y estilo del botón */
+.componente-con-banda .boton-container {
   width: 100%;
   text-align: center;
 }
 
-.boton-link {
-  color:var(--heading-color);
+/* Estilo del botón */
+.componente-con-banda .boton-link {
+  color: var(--heading-color);
   display: inline-block;
   padding: 0.75rem 1.5rem;
   background-color: var(--surface-color);
@@ -1374,8 +1377,17 @@ section .componente {
   transition: background-color 0.3s ease;
 }
 
-.boton-link:hover {
-  color:var(--default-color);
+/* Efecto hover para el botón */
+.componente-con-banda .boton-link:hover {
+  color: var(--default-color);
   background-color: var(--accent-color);
 }
 
+/* Imagen de banda como fondo */
+.componente-con-banda .imagen-banda {
+  width: 100%;
+  height: 700px; /* Altura fija */
+  object-fit: cover;
+  object-position: center; /* Ajusta la parte que se muestra de la imagen */
+  display: block;
+}
