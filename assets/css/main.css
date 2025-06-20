@@ -1229,13 +1229,13 @@ section .componente {
 .componente .imagen-pequena {
   position: relative;
   width: 100%;
-  max-width: 200px;
+  max-width: 500px;
   margin-bottom: 1rem;
 }
 
 .componente .imagen-pequena img {
-  width: 100%;
-  height: 100px;
+  width: 300px;
+  height: 100%;
   display: block;
   border-radius: 6px;
 }
@@ -1244,9 +1244,8 @@ section .componente {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-90%, -50%);
   color: rgb(173, 0, 0);
-  font-size: 1rem;
   font-weight: bold;
   text-align: center;
   padding: 0.3rem 0.6rem;
@@ -1306,7 +1305,7 @@ section .componente {
 /* Estilo del texto */
 .texto {
   font-size: 1.2rem;
-  color: #333;
+  color: #7d7b7b;
   margin: 0;
 }
 
@@ -1336,8 +1335,8 @@ section .componente {
 
 /* Componente suelto sobre la imagen de fondo */
 .componente-con-banda .componente-suelto {
-  top: 50%; /* Centrado vertical */
-  left: 50%; /* Centrado horizontal */
+  top: 100%; /* Centrado vertical */
+  left: 30%; /* Centrado horizontal */
   transform: translate(-50%, -150%); /* Ajuste para el centro exacto */
   z-index: 1; /* Asegura que el componente esté sobre la imagen de fondo */
   display: flex;
